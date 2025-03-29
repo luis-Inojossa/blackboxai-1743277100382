@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Clone</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="bg-black text-white font-['Roboto']">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-black to-transparent transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center">
+                <svg viewBox="0 0 111 30" class="h-8 md:h-10">
+                    <path d="M105.06233,14.2806261 L110.999156,30 C109.249227,29.7497422 107.500234,29.4366857 105.718437,29.1554972 L102.374168,20.4686475 L98.9371075,28.4375293 C97.2499766,28.1563408 95.5928391,28.061674 93.9057081,27.8432843 L99.9372012,14.0931671 L94.4680851,-5.68434189e-14 L99.5313525,-5.68434189e-14 L102.593495,7.87421502 L105.874965,-5.68434189e-14 L110.999156,-5.68434189e-14 L105.06233,14.2806261 Z M90.4686475,-5.68434189e-14 L85.8749649,-5.68434189e-14 L85.8749649,27.2499766 C87.3746368,27.3437061 88.9371075,27.4055675 90.4686475,27.5930265 L90.4686475,-5.68434189e-14 Z M81.9055207,26.93692 C77.7186241,26.6557316 73.5307901,26.4064111 69.250164,26.3117443 L69.250164,-5.68434189e-14 L73.9366389,-5.68434189e-14 L73.9366389,21.8745899 C76.6248008,21.9373887 79.3120255,22.1557784 81.9055207,22.2804387 L81.9055207,26.93692 Z M64.2496954,10.6561065 L64.2496954,15.3435186 L57.8442216,15.3435186 L57.8442216,25.9996251 L53.2186709,25.9996251 L53.2186709,-5.68434189e-14 L66.3436123,-5.68434189e-14 L66.3436123,4.68741213 L57.8442216,4.68741213 L57.8442216,10.6561065 L64.2496954,10.6561065 Z M45.3435186,4.68741213 L45.3435186,26.2498828 C43.7810479,26.2498828 42.1876465,26.2498828 40.6561065,26.3117443 L40.6561065,4.68741213 L35.8121661,4.68741213 L35.8121661,-5.68434189e-14 L50.2183897,-5.68434189e-14 L50.2183897,4.68741213 L45.3435186,4.68741213 Z M30.749836,15.5928391 C28.687787,15.5928391 26.2498828,15.5928391 24.4999531,15.6875059 L24.4999531,22.6562939 C27.2499766,22.4678976 30,22.2495079 32.7809542,22.1557784 L32.7809542,26.6557316 L19.812541,27.6876933 L19.812541,-5.68434189e-14 L32.7809542,-5.68434189e-14 L32.7809542,4.68741213 L24.4999531,4.68741213 L24.4999531,10.9991564 C26.3126816,10.9991564 29.0936358,10.9054269 30.749836,10.9054269 L30.749836,15.5928391 Z M4.78114163,12.9684132 L4.78114163,29.3429562 C3.09401069,29.5313525 1.59340144,29.7497422 0,30 L0,-5.68434189e-14 L4.4690224,-5.68434189e-14 L10.562377,17.0315868 L10.562377,-5.68434189e-14 L15.2497891,-5.68434189e-14 L15.2497891,28.061674 C13.5935889,28.3437998 11.906458,28.4375293 10.1246602,28.6868498 L4.78114163,12.9684132 Z" fill="#e50914"></path>
+                </svg>
+                <div class="hidden md:flex ml-6 space-x-4">
+                    <a href="#" class="text-white hover:text-gray-300 text-sm">Home</a>
+                    <a href="#" class="text-white hover:text-gray-300 text-sm">TV Shows</a>
+                    <a href="#" class="text-white hover:text-gray-300 text-sm">Movies</a>
+                    <a href="#" class="text-white hover:text-gray-300 text-sm">New & Popular</a>
+                    <a href="#" class="text-white hover:text-gray-300 text-sm">My List</a>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="relative">
+                    <button class="text-white flex items-center">
+                        <i class="fas fa-globe mr-1"></i>
+                        <span>English</span>
+                        <i class="fas fa-caret-down ml-1"></i>
+                    </button>
+                </div>
+                <button class="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded text-sm">
+                    Sign In
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero section -->
+    <section class="hero-section h-screen relative">
+        <div class="absolute inset-0 bg-black/50 z-10"></div>
+        <div class="absolute inset-0 bg-[url('https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.png')] bg-cover bg-center"></div>
+        
+        <div class="relative z-20 h-full flex flex-col justify-center items-center text-center px-4">
+            <h1 class="text-4xl md:text-6xl font-bold max-w-2xl mb-4">
+                Unlimited movies, TV shows, and more
+            </h1>
+            <p class="text-xl md:text-2xl mb-6">Watch anywhere. Cancel anytime.</p>
+            <div class="w-full max-w-xl">
+                <p class="text-lg mb-4">Ready to watch? Enter your email to create or restart your membership.</p>
+                <div class="flex flex-col sm:flex-row gap-2">
+                    <input type="email" placeholder="Email address" class="flex-grow px-4 py-3 bg-black/70 border border-gray-600 rounded">
+                    <button class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded text-xl font-semibold flex items-center justify-center">
+                        Get Started
+                        <i class="fas fa-chevron-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content rows -->
+    <main class="content-rows pt-20 pb-40">
+        <section class="mb-8">
+            <h2 class="text-xl md:text-2xl font-bold mb-4 px-4 md:px-8">Popular on Netflix</h2>
+            <div class="relative">
+                <div class="flex overflow-x-scroll space-x-2 px-4 md:px-8 scrollbar-hide">
+                    <div class="flex-none w-48 h-72 rounded overflow-hidden">
+                        <img src="https://image.tmdb.org/t/p/w500/1XDDXPXGiI8id7MrUxK36ke7gkX.jpg" alt="Stranger Things" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-none w-48 h-72 rounded overflow-hidden">
+                        <img src="https://image.tmdb.org/t/p/w500/9Gtg2DzBhmYamXBS1hKAhiwbBKS.jpg" alt="The Witcher" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-none w-48 h-72 rounded overflow-hidden">
+                        <img src="https://image.tmdb.org/t/p/w500/6kbAMLteGO8yyewYau6bJ683sw7.jpg" alt="Wednesday" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-none w-48 h-72 rounded overflow-hidden">
+                        <img src="https://image.tmdb.org/t/p/w500/7AiIrnDMaOhPrw9elJH5NU62MqK.jpg" alt="The Sandman" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-none w-48 h-72 rounded overflow-hidden">
+                        <img src="https://image.tmdb.org/t/p/w500/5DUMPBSnHOZsbBv81GFXZXvDGr6.jpg" alt="Peaky Blinders" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-xl md:text-2xl font-bold mb-4 px-4 md:px-8">Trending Now</h2>
+            <div class="relative">
+                <div class="flex overflow-x-scroll space-x-2 px-4 md:px-8 scrollbar-hide">
+                    <div class="flex-none w-48 h-72 rounded overflow-hidden">
+                        <img src="https://image.tmdb.org/t/p/w500/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg" alt="Extraction 2" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-none w-48 h-72 rounded overflow-hidden">
+                        <img src="https://image.tmdb.org/t/p/w500/7gKI9hpEMcZUQpNgKrkDzJpbnNS.jpg" alt="The Gray Man" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-none w-48 h-72 rounded overflow-hidden">
+                        <img src="https://image.tmdb.org/t/p/w500/5mzr6JZbrqnqD8rCEvPhuCE5Fw2.jpg" alt="The Mother" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-none w-48 h-72 rounded overflow-hidden">
+                        <img src="https://image.tmdb.org/t/p/w500/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg" alt="Avengers: Infinity War" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-none w-48 h-72 rounded overflow-hidden">
+                        <img src="https://image.tmdb.org/t/p/w500/6DrHO1jr3qVrViUO6s6kFiAGM7.jpg" alt="Spider-Man: No Way Home" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-500 py-12 px-4 md:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-6">
+                <a href="#" class="text-gray-500 hover:text-white">
+                    <i class="fab fa-facebook-square mr-4 text-2xl"></i>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-white">
+                    <i class="fab fa-instagram mr-4 text-2xl"></i>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-white">
+                    <i class="fab fa-twitter mr-4 text-2xl"></i>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-white">
+                    <i class="fab fa-youtube text-2xl"></i>
+                </a>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <div>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-sm hover:underline">Audio Description</a></li>
+                        <li><a href="#" class="text-sm hover:underline">Investor Relations</a></li>
+                        <li><a href="#" class="text-sm hover:underline">Legal Notices</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-sm hover:underline">Help Center</a></li>
+                        <li><a href="#" class="text-sm hover:underline">Jobs</a></li>
+                        <li><a href="#" class="text-sm hover:underline">Cookie Preferences</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-sm hover:underline">Gift Cards</a></li>
+                        <li><a href="#" class="text-sm hover:underline">Terms of Use</a></li>
+                        <li><a href="#" class="text-sm hover:underline">Corporate Information</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-sm hover:underline">Media Center</a></li>
+                        <li><a href="#" class="text-sm hover:underline">Privacy</a></li>
+                        <li><a href="#" class="text-sm hover:underline">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mb-4">
+                <button class="border border-gray-500 px-3 py-1 text-sm flex items-center">
+                    <i class="fas fa-globe mr-2"></i>
+                    <span>English</span>
+                    <i class="fas fa-caret-down ml-2"></i>
+                </button>
+            </div>
+            <p class="text-xs">© 2023 Netflix Clone</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
